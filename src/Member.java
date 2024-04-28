@@ -49,4 +49,13 @@ public class Member {
     public Member getMember(int id){
         return null;
     }
+
+    @Override
+    public String toString() {
+        return "Member{" +
+                "name='" + name + '\'' +
+                ", ID=" + ID +
+                ", address=" + address +
+                '}';
+    }
 }

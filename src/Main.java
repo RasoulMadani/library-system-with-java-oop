@@ -70,11 +70,40 @@ public class Main {
                     }
 
                 } else if (entity.equals("book")) {
-                    Book[] books = library.getExistBook();
-                    for (Book b : books) {
-                        if (b != null)
-                            System.out.println(b.toString());
+                    System.out.println("1 - all books");
+                    System.out.println("2 - exist books");
+                    System.out.println("3 - borrow books");
+
+                    int n = scanner.nextInt();
+                    switch (n) {
+                        case 1: {
+                            Book[] books = library.getAllBooks();
+                            for (Book b : books) {
+                                if (b != null)
+                                    System.out.println(b.toString());
+                            }
+                            break;
+                        }
+                        case 2: {
+                            Book[] books = library.getExistBook();
+                            for (Book b : books) {
+                                if (b != null)
+                                    System.out.println(b.toString());
+                            }
+                            break;
+                        }
+
+                        case 3: {
+                            Book[] books = library.getBorrowedBooks();
+                            for (Book b : books) {
+                                if (b != null)
+                                    System.out.println(b.toString());
+                            }
+                            break;
+                        }
+
                     }
+
                 } else if (entity.equals("borrow")) {
 
                 }

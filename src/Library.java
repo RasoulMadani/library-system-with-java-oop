@@ -1,5 +1,7 @@
 public class Library {
-    static MyArrayList members = new MyArrayList();
+    MyArrayList members = new MyArrayList();
+    MyArrayList borrowedBooks = new MyArrayList();
+    MyArrayList existBooks = new MyArrayList();
     private String name;
 
     public Library(String name){
@@ -31,10 +33,19 @@ public class Library {
     }
 
     public void addBook(Book b){
-
+        existBooks.add(b);
     }
     public Book[] getExistBook(){
-        return null;
+        Book []books = new Book[existBooks.data.length];
+        for (int i = 0; i < existBooks.data.length; i++) {
+            try {
+                if (existBooks.get(i) != null)
+                    books[i] = (Book) existBooks.get(i);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return books;
     }
     public Book[] getBorrowedBooks(){
         return  null;

@@ -1,4 +1,5 @@
 public class Library {
+    static MyArrayList members = new MyArrayList();
     private String name;
 
     public Library(String name){
@@ -14,10 +15,19 @@ public class Library {
     }
 
     public void addMember(Member m){
-
+        members.add(m);
     }
     public Member[] getMembers(){
-        return null;
+        Member[] mem = new Member[members.data.length];
+        for (int i = 0; i < members.data.length; i++) {
+            try {
+                if (members.get(i) != null)
+                    mem[i] = (Member) members.get(i);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return mem;
     }
 
     public void addBook(Book b){

@@ -1,8 +1,8 @@
 public class MyArrayList {
     private static final int SIZE_FACTOR=5;
-    private Object data[];
+    public Object data[];
     private int index;
-    private int size;
+    public int size;
     public MyArrayList(){
         this.data = new Object[SIZE_FACTOR];
         this.size = SIZE_FACTOR;
@@ -26,7 +26,7 @@ public class MyArrayList {
     }
     public Object get(int i) throws Exception{
         if(i>this.index -1 ){
-            throw new Exception("ArrayIndexOutBound");
+//            throw new Exception("ArrayIndexOutBound");
         }
         if(i<0){
             throw new Exception("Negative value");
